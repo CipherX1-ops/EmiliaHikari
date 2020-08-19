@@ -93,7 +93,7 @@ def send_help(chat_id, text, keyboard=None):
 @run_async
 def test(update, context):
     # pprint(eval(str(update)))
-    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
+    # update.effective_message.reply_text("Hello tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
     update.effective_message.reply_text("This person edited a message")
     print(context.match)
     print(update.effective_message.text)
@@ -147,8 +147,8 @@ def start(update, context):
             buttons = InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="🎉 Add me to your group", url="https://t.me/{}?startgroup=new".format(context.bot.username))],
                 [InlineKeyboardButton(text="💭 Language", callback_data="main_setlang"), InlineKeyboardButton(text="⚙️ Connect Group", callback_data="main_connect")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/EmiliaOfficial"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/AyraBotNews")],
-                [InlineKeyboardButton(text="❓ Help", url="https://t.me/{}?start=help".format(context.bot.username)), InlineKeyboardButton(text="💖 Donate", url="http://ayrahikari.github.io/donations.html")]])
+                [InlineKeyboardButton(text="❓ Help", url="https://t.me/{}?start=help".format(context.bot.username)), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/FutureTechnologyGuard")],
+                [InlineKeyboardButton(text="💖 Donate", url="https://t.me/Hackintush")]])
             update.effective_message.reply_text(
                 tl(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(context.bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
@@ -439,7 +439,7 @@ def donate(update, context):
     if chat.type == "private":
         update.effective_message.reply_text(tl(update.effective_message, DONATE_STRING), parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
-        if OWNER_ID != 388576209 and DONATION_LINK:
+        if OWNER_ID != 798271566 and DONATION_LINK:
             update.effective_message.reply_text(tl(update.effective_message, "Anda juga dapat menyumbang kepada orang yang saat ini menjalankan saya "
                                                 "[disini]({})").format(DONATION_LINK),
                                                 parse_mode=ParseMode.MARKDOWN)
