@@ -39,10 +39,10 @@ def verify_welcome(update, context, chat_id):
 	user_id = update.effective_user.id
 	is_clicked = sql.get_chat_userlist(chat_id)
 	if user_id not in list(is_clicked):
-		send_message(update.effective_message, tl(update.effective_message, "Anda sedang tidak dalam mode verifikasi, jika anda sedang di bisukan, anda dapat meminta tolong pada admin di grup yang bersangkutan"))
+		send_message(update.effective_message, tl(update.effective_message, "You are not in verification mode, if you are muted, you can ask the admin in the group concerned for help"))
 		return
 	elif user_id in list(is_clicked) and is_clicked[user_id] == True:
-		send_message(update.effective_message, tl(update.effective_message, "Anda sedang tidak dalam mode verifikasi, jika anda sedang di bisukan, anda dapat meminta tolong pada admin di grup yang bersangkutan"))
+		send_message(update.effective_message, tl(update.effective_message, "You are not in verification mode, if you are muted, you can ask the admin in the group concerned for help"))
 		return
 	verify_code = ["🙏", "👈", "👉", "👇", "👆", "❤️", "🅰️", "🅱️", "0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 	print(len(verify_code))
@@ -69,7 +69,7 @@ def verify_welcome(update, context, chat_id):
 		verbox = (random.randint(1, 3), random.randint(1, 3))
 		linebox[verbox[0]-1][verbox[1]-1] = InlineKeyboardButton(text=real_btn, callback_data="verify_me(y|{}|{})".format(user_id, chat_id))
 	buttons.append([InlineKeyboardButton(text="Refresh", callback_data="verify_me(re|{}|{})".format(user_id, chat_id))])
-	context.bot.send_photo(user_id, photo=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Tolong pilih emoji yang sama dibawah ini:") + "\n" + tl(update.effective_message, "Jika tidak ada emoji yang sama, harap klik tombol refresh"), parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
+	context.bot.send_photo(user_id, photo=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Please choose the same emoji below:") + "\n" + tl(update.effective_message, "If none of the emojis are the same, please click the refresh button"), parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
 
 def verify_button_pressed(update, context):
 	chat = update.effective_chat  # type: Optional[Chat]
@@ -101,23 +101,23 @@ def verify_button_pressed(update, context):
 			sql.rm_from_timeout(chat_id, user_id)
 		except BadRequest as err:
 			if not update.effective_chat.get_member(context.bot.id).can_restrict_members:
-				query.answer(text=tl(update.effective_message, "Saya tidak dapat membatasi orang disini, tanya admin untuk unmute!"))
+				query.answer(text=tl(update.effective_message, "I can't limit people here, asked the admin to unmute!"))
 			else:
 				query.answer(text="Error: " + str(err))
 			return
 		chat_name = context.bot.get_chat(chat_id).title
 		# query.message.delete()
-		# context.bot.send_photo(chat.id, photo="https://telegra.ph/file/06d2c5ec80af3858c2d4b.jpg", caption=tl(update.effective_message, "*Berhasil!*\n\nKerja bagus manusia, kini Anda dapat chatting di: *{}*").format(chat_name), parse_mode="markdown")
-		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/done.jpg", 'rb'), caption=tl(update.effective_message, "*Berhasil!*\n\nKerja bagus manusia, kini Anda dapat chatting di: *{}*").format(chat_name), parse_mode="markdown"))
-		query.answer(text=tl(update.effective_message, "Berhasil! Anda dapat chatting di {} sekarang").format(chat_name), show_alert=True)
+		# context.bot.send_photo(chat.id, photo="https://telegra.ph/file/06d2c5ec80af3858c2d4b.jpg", caption=tl(update.effective_message, "*It works!*\n\nGreat job man, now you can chat on: *{}*").format(chat_name), parse_mode="markdown")
+		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/done.jpg", 'rb'), caption=tl(update.effective_message, "*It works!*\n\nGreat job man, now you can chat on: *{}*").format(chat_name), parse_mode="markdown"))
+		query.answer(text=tl(update.effective_message, "It works! You can chat on {} now").format(chat_name), show_alert=True)
 	elif is_ok == "re":
 		user_id = update.effective_user.id
 		is_clicked = sql.get_chat_userlist(chat_id)
 		if user_id not in list(is_clicked):
-			context.bot.edit_message_text(chat.id, message_id=query.message.message_id, text=tl(update.effective_message, "Anda sedang tidak dalam mode verifikasi, jika anda sedang di bisukan, anda dapat meminta tolong pada admin di grup yang bersangkutan"))
+			context.bot.edit_message_text(chat.id, message_id=query.message.message_id, text=tl(update.effective_message, "You are not in verification mode, if you are muted, you can ask the admin in the group concerned for help"))
 			return query.answer(text=tl(update.effective_message, "Error"), show_alert=False)
 		elif user_id in list(is_clicked) and is_clicked[user_id] == True:
-			context.bot.edit_message_text(chat.id, message_id=query.message.message_id, text=tl(update.effective_message, "Anda sedang tidak dalam mode verifikasi, jika anda sedang di bisukan, anda dapat meminta tolong pada admin di grup yang bersangkutan"))
+			context.bot.edit_message_text(chat.id, message_id=query.message.message_id, text=tl(update.effective_message, "You are not in verification mode, if you are muted, you can ask the admin in the group concerned for help"))
 			return query.answer(text=tl(update.effective_message, "Error"), show_alert=False)
 		verify_code = ["🙏", "👈", "👉", "👇", "👆", "❤️", "🅰️", "🅱️", "0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 		real_btn = random.choice(verify_code)
@@ -147,14 +147,14 @@ def verify_button_pressed(update, context):
 			print("[x] button was set to " + real_btn + "at " + str(verbox[0]) + " - " + str(verbox[1]))
 		buttons.append([InlineKeyboardButton(text="Refresh", callback_data="verify_me(re|{}|{})".format(user_id, chat_id))])
 		# query.message.delete()
-		# context.bot.send_photo(chat.id, photo=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Tolong pilih emoji yang sama dibawah ini:") + "\n" + tl(update.effective_message, "Jika tidak ada emoji yang sama, harap klik tombol refresh"), parse_mode="markdown", reply_markup=InlineKeyboardMarkup(buttons))
-		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Tolong pilih emoji yang sama dibawah ini:") + "\n" + tl(update.effective_message, "Jika tidak ada emoji yang sama, harap klik tombol refresh"), parse_mode="markdown"), reply_markup=InlineKeyboardMarkup(buttons))
+		# context.bot.send_photo(chat.id, photo=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Please choose the same emoji below:") + "\n" + tl(update.effective_message, "If none of the emojis are the same, please click the refresh button"), parse_mode="markdown", reply_markup=InlineKeyboardMarkup(buttons))
+		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/" + verify_code_images[real_btn], 'rb'), caption=tl(update.effective_message, "Please choose the same emoji below:") + "\n" + tl(update.effective_message, "If none of the emojis are the same, please click the refresh button"), parse_mode="markdown"), reply_markup=InlineKeyboardMarkup(buttons))
 		query.answer(text=tl(update.effective_message, "Done"), show_alert=False)
 	else:
 		# query.message.delete()
-		# context.bot.send_photo(chat.id, photo=open("emilia/modules/helper_funcs/emojis/fail.jpg", 'rb'), caption=tl(update.effective_message, "Maaf robot, kamu telah salah klik tombol verifikasi.\n\nCoba lagi dengan klik tombol verifikasi pada pesan selamat datang."), parse_mode="markdown")
-		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/fail.jpg", 'rb'), caption=tl(update.effective_message, "Maaf robot, kamu telah salah klik tombol verifikasi.\n\nCoba lagi dengan klik tombol verifikasi pada pesan selamat datang."), parse_mode="markdown"))
-		query.answer(text=tl(update.effective_message, "Gagal! Kamu telah salah mengklik tombol verifikasi"), show_alert=True)
+		# context.bot.send_photo(chat.id, photo=open("emilia/modules/helper_funcs/emojis/fail.jpg", 'rb'), caption=tl(update.effective_message, "Sorry robot, you have clicked the wrong verification button.\n\nTry again by clicking the verify button in the welcome message."), parse_mode="markdown")
+		context.bot.edit_message_media(chat.id, message_id=query.message.message_id, media=InputMediaPhoto(media=open("emilia/modules/helper_funcs/emojis/fail.jpg", 'rb'), caption=tl(update.effective_message, "Sorry robot, you have clicked the wrong verification button..\n\nTry again by clicking the verify button in the welcome message."), parse_mode="markdown"))
+		query.answer(text=tl(update.effective_message, "Failed! You have clicked the verification button incorrectly"), show_alert=True)
 
 
 verify_callback_handler = CallbackQueryHandler(verify_button_pressed, pattern=r"verify_me")
