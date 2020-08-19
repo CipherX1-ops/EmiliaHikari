@@ -218,7 +218,7 @@ def welcome_security(chat_id):
 		if security:
 			return security.security, security.extra_verify, security.mute_time, security.timeout, security.timeout_mode, security.custom_text
 		else:
-			return False, False, "0", "0", 1, "Klik disini untuk mensuarakan"
+			return False, False, "0", "0", 1, "Yes, I'm Human."
 	finally:
 		SESSION.close()
 
