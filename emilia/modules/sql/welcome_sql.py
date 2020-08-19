@@ -7,7 +7,7 @@ from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
 from emilia.modules.helper_funcs.msg_types import Types
 from emilia.modules.sql import SESSION, BASE
 
-DEFAULT_WELCOME = "Dear {first}, Welcome to our group. 🙂"
+DEFAULT_WELCOME = "Dear {mention}, Welcome to our group. 🙂"
 DEFAULT_GOODBYE = "I wish you join again lol 😉"
 
 
@@ -86,7 +86,7 @@ class WelcomeSecurity(BASE):
 	mute_time = Column(UnicodeText, default="0")
 	timeout = Column(UnicodeText, default="0")
 	timeout_mode = Column(Integer, default=1)
-	custom_text = Column(UnicodeText, default="Klik disini untuk mensuarakan")
+	custom_text = Column(UnicodeText, default="Yes, I'm Human.")
 
 	def __init__(self, chat_id, security=False, extra_verify=False, mute_time="0", timeout="0", timeout_mode=1, custom_text="Klik disini untuk mensuarakan"):
 		self.chat_id = str(chat_id) # ensure string
