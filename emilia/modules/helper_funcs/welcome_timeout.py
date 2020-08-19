@@ -25,17 +25,17 @@ def welcome_timeout(context):
 			if timeout_mode == 1:
 				try:
 					context.bot.unbanChatMember(chat_id, user_id)
-					# send_message_raw(chat_id, tl(user_id, "Verifikasi gagal!\n{} telah di tendang!").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name)), parse_mode="markdown")
+					# send_message_raw(chat_id, tl(user_id, "Verification failed!\n{} has been kicked!").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name)), parse_mode="markdown")
 				except Exception as err:
 					pass
-					# send_message_raw(chat_id, tl(user_id, "Verifikasi gagal!\nTetapi gagal menendang {}: {}").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name), str(err)), parse_mode="markdown")
+					# send_message_raw(chat_id, tl(user_id, "Verification failed!\nBut failed to kick {}: {}").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name), str(err)), parse_mode="markdown")
 			elif timeout_mode == 2:
 				try:
 					context.bot.kickChatMember(chat_id, user_id)
-					# send_message_raw(chat_id, tl(user_id, "Verifikasi gagal!\n{} telah di banned!").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name)), parse_mode="markdown")
+					# send_message_raw(chat_id, tl(user_id, "Verification failed!\n{} has been banned!").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name)), parse_mode="markdown")
 				except Exception as err:
 					pass
-					# send_message_raw(chat_id, tl(user_id, "Verifikasi gagal!\nTetapi gagal membanned {}: {}").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name), str(err)), parse_mode="markdown")
+					# send_message_raw(chat_id, tl(user_id, "Verification failed!\nBut failed to ban {}: {}").format(mention_markdown(user_id, context.bot.getChatMember(chat_id, user_id).user.first_name), str(err)), parse_mode="markdown")
 			sql.rm_from_timeout(chat_id, user_id)
 
 
@@ -52,21 +52,21 @@ def set_verify_welcome(update, context):
 		if (var == "yes" or var == "ya" or var == "on"):
 			check = context.bot.getChatMember(chat.id, context.bot.id)
 			if check.status == 'member' or check['can_restrict_members'] == False:
-				text = tl(update.effective_message, "Saya tidak bisa membatasi orang di sini! Pastikan saya admin agar bisa membisukan seseorang!")
+				text = tl(update.effective_message, "I can't limit people here! Make sure I'm the admin so I can mute someone!")
 				send_message(update.effective_message, text, parse_mode="markdown")
 				return ""
 			sql.set_welcome_security(chat.id, getcur, True, str(cur_value), str(timeout), int(timeout_mode), cust_text)
-			send_message(update.effective_message, tl(update.effective_message, "Keamanan untuk member baru di aktifkan! Pengguna baru di wajibkan harus menyelesaikan verifikasi untuk chat"))
+			send_message(update.effective_message, tl(update.effective_message, "Security for new members is activated! New users are required to complete verification to chat"))
 		elif (var == "no" or var == "ga" or var == "off"):
 			sql.set_welcome_security(chat.id, getcur, False, str(cur_value), str(timeout), int(timeout_mode), cust_text)
-			send_message(update.effective_message, tl(update.effective_message, "Di nonaktifkan, pengguna dapat mengklik tombol untuk langsung chat"))
+			send_message(update.effective_message, tl(update.effective_message, "Disabled, users can click a button to chat directly"))
 		else:
-			send_message(update.effective_message, tl(update.effective_message, "Silakan tulis `on`/`ya`/`off`/`ga`!"), parse_mode=ParseMode.MARKDOWN)
+			send_message(update.effective_message, tl(update.effective_message, "Please write `on`/`ya`/`off`/`ga`!"), parse_mode=ParseMode.MARKDOWN)
 	else:
 		getcur, extra_verify, cur_value, timeout, timeout_mode, cust_text = sql.welcome_security(chat.id)
 		if cur_value[:1] == "0":
 			cur_value = tl(update.effective_message, "Selamanya")
-		text = tl(update.effective_message, "Pengaturan saat ini adalah:\nWelcome security: `{}`\nVerify security: `{}`\nMember akan di mute selama: `{}`\nWaktu verifikasi timeout: `{}`\nTombol unmute custom: `{}`").format(getcur, extra_verify, cur_value, make_time(int(timeout)), cust_text)
+		text = tl(update.effective_message, "The current setting is:\nWelcome security: `{}`\nVerify security: `{}`\nMember will be muted for: `{}`\nTimeout verification time: `{}`\nCustom unmute button: `{}`").format(getcur, extra_verify, cur_value, make_time(int(timeout)), cust_text)
 		send_message(update.effective_message, text, parse_mode="markdown")
 
 
@@ -83,19 +83,19 @@ def set_welctimeout(update, context):
 		if var[:1] == "0":
 			mutetime = "0"
 			sql.set_welcome_security(chat.id, getcur, extra_verify, cur_value, "0", timeout_mode, cust_text)
-			text = tl(update.effective_message, "Batas waktu verifikasi telah di nonaktifkan!")
+			text = tl(update.effective_message, "The verification deadline has been disabled!")
 		else:
 			mutetime = extract_time_int(message, var)
 			if mutetime == "":
 				return
 			sql.set_welcome_security(chat.id, getcur, extra_verify, cur_value, str(mutetime), timeout_mode, cust_text)
-			text = tl(update.effective_message, "Jika member baru tidak memverifikasi selama *{}* maka dia akan di *{}*").format(var, "Kick" if timeout_mode == 1 else "Banned")
+			text = tl(update.effective_message, "If new members don't verify during *{}* then he / she will be on *{}*").format(var, "Kick" if timeout_mode == 1 else "Banned")
 		send_message(update.effective_message, text, parse_mode="markdown")
 	else:
 		if timeout == "0":
-			send_message(update.effective_message, tl(update.effective_message, "Pengaturan batas waktu ketika join: *{}*").format("Disabled"), parse_mode="markdown")
+			send_message(update.effective_message, tl(update.effective_message, "Time limit setting when joining: *{}*").format("Disabled"), parse_mode="markdown")
 		else:
-			send_message(update.effective_message, tl(update.effective_message, "Pengaturan batas waktu ketika join: *{}*").format(make_time(int(timeout))), parse_mode="markdown")
+			send_message(update.effective_message, tl(update.effective_message, "Time limit setting when joining: *{}*").format(make_time(int(timeout))), parse_mode="markdown")
 
 @run_async
 @spamcheck
@@ -113,7 +113,7 @@ def timeout_mode(update, context):
 		chat_name = dispatcher.bot.getChat(conn).title
 	else:
 		if update.effective_message.chat.type == "private":
-			send_message(update.effective_message, tl(update.effective_message, "Anda bisa lakukan command ini pada grup, bukan pada PM"))
+			send_message(update.effective_message, tl(update.effective_message, "You can do this command on a group, not on PM"))
 			return ""
 		chat = update.effective_chat
 		chat_id = update.effective_chat.id
@@ -129,12 +129,12 @@ def timeout_mode(update, context):
 			settypeblacklist = tl(update.effective_message, 'banned')
 			sql.set_welcome_security(chat.id, getcur, extra_verify, cur_value, timeout, 2, cust_text)
 		else:
-			send_message(update.effective_message, tl(update.effective_message, "Saya hanya mengerti kick/banned!"))
+			send_message(update.effective_message, tl(update.effective_message, "I only understand kick/banned!"))
 			return
 		if conn:
-			text = tl(update.effective_message, "Mode timeout diubah, Pengguna akan di `{}` pada *{}*!").format(settypeblacklist, chat_name)
+			text = tl(update.effective_message, "Timeout mode is changed, User will be on `{}` on *{}*!").format(settypeblacklist, chat_name)
 		else:
-			text = tl(update.effective_message, "Mode timeout diubah, Pengguna akan di `{}`!").format(settypeblacklist)
+			text = tl(update.effective_message, "Timeout mode is changed, User will be on `{}`!").format(settypeblacklist)
 		send_message(update.effective_message, text, parse_mode="markdown")
 	else:
 		if timeout_mode == 1:
@@ -142,9 +142,9 @@ def timeout_mode(update, context):
 		elif timeout_mode == 2:
 			settypeblacklist = tl(update.effective_message, "banned")
 		if conn:
-			text = tl(update.effective_message, "Mode timeout saat ini disetel ke *{}* pada *{}*.").format(settypeblacklist, chat_name)
+			text = tl(update.effective_message, "The timeout mode is currently set to *{}* on *{}*.").format(settypeblacklist, chat_name)
 		else:
-			text = tl(update.effective_message, "Mode timeout saat ini disetel ke *{}*.").format(settypeblacklist)
+			text = tl(update.effective_message, "The timeout mode is currently set to *{}*.").format(settypeblacklist)
 		send_message(update.effective_message, text, parse_mode=ParseMode.MARKDOWN)
 	return
 
