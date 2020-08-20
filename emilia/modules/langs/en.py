@@ -19,7 +19,7 @@ en = {
 	"Bahasa telah di ubah ke {}!": "Language changed to {}!",
 	"Bahasa di *{}* saat ini adalah:\n{}.\n\nPilih bahasa:": "Current language in *{}* is:\n{}.\n\nSelect language:",
 	"obrolan saat ini": "current in this chat",
-	"language_help": """Not every group speaks indonesian; some groups would rather have Emilia respond in their own language.
+	"language_help": """Not every group speaks indonesian; some groups would rather have LynX respond in their own language.
 
 This is where translations come in; you can change most of Emilia's replies to be in the language of your choice!
 
@@ -34,18 +34,15 @@ Available commands are:
 	"Ada yang bisa saya bantu? 😊": "Is there anything I can help? 😊",
 	"start_text": """
 Hi {}, my name is {}! I am a group manager managed by [my master](tg://user?id={}).
-To get this bot status info and update, you can join our channel [Ayra's Bot News](https://t.me/AyraBotNews)
-
-Any issue or need more help?
-Join our group [Emilia Official Support](https://t.me/EmiliaOfficial)!
+To get this bot status info and update, you can join our channel [Future Technology](https://t.me/FutureTechnologyGuard)
 
 You can find the list of available commands with /help.
 
 If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
 """,
 	"help_text": """
-Hey there! My name is *Emilia*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
+Hey there! My name is *LynX*.
+I'm a modular group management bot with fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -63,13 +60,13 @@ All commands can either be used with / or !.
 And the following:
 """,
 	"donate_text": """Hello, glad to hear you want to donate!
-Need a lot of work for [my creator](tg://user?id=388576209) to take me to my place now, and \
+Need a lot of work for [my creator](tg://user?id=798271566) to take me to my place now, and \
 every donation helps and motivates him to make me better.
 
 All donated money will be given to a better VPS to host me, and or some food. \
 He is just an ordinary person, so it will really help him!
 
-If you really are interested in donating, please visit ayrahikari.github.io/donations.html, Thank you 😁""",
+If you really are interested in donating, please message [my master](tg://user?id=798271566), Thank you 😁""",
 	"Kembali": "Back",
 	"Hubungi saya di PM untuk mendapatkan daftar perintah.": "Contact me in PM to get the list of possible commands.",
 	"Tolong": "Help",
@@ -195,8 +192,8 @@ Examples of time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 week.
 # Backups
 	"Coba unduh dan unggah ulang file seperti Anda sendiri sebelum mengimpor - yang ini sepertinya rusak!": "Try downloading and reuploading the file as yourself before importing - this one seems to be iffy!",
 	"File cadangan tidak valid!": "Invalid backup file!",
-	"Telah terjadi kesalahan dalam import backup Emilia!\nGabung ke [Grup support](https://t.me/EmiliaOfficial) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from Emilia backup!\nJoin our [Group support](https://t.me/EmiliaOfficial) for reporting and troubleshooting this problem!\n\nThank you",
-	"Telah terjadi kesalahan dalam import backup Rose!\nGabung ke [Grup support](https://t.me/EmiliaOfficial) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from Rose backup!\nJoin our [Group support](https://t.me/EmiliaOfficial) for reporting and troubleshooting this problem!\n\nThank you",
+	"Telah terjadi kesalahan dalam import backup LynX!\nGabung ke [Channel support](https://t.me/FutureTechnologyGuard) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from LynX backup!\nJoin our [Channel support](https://t.me/FutureTechnologyGuard) for reporting and troubleshooting this problem!\n\nThank you",
+	"Telah terjadi kesalahan dalam import backup Rose!\nGabung ke [Channel support](https://t.me/FutureTechnologyGuard) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from Rose backup!\nJoin our [Channel support](https://t.me/FutureTechnologyGuard) for reporting and troubleshooting this problem!\n\nThank you",
 	"Ada lebih dari satu grup di file ini, dan tidak ada yang memiliki id obrolan yang sama dengan grup ini - bagaimana cara memilih apa yang akan diimpor?": "Theres more than one group here in this file, and none have the same chat id as this group - how do I choose what to import?",
 	"Backup berasal chat lain, Saya tidak bisa mengembalikan chat lain kedalam chat *{}*": "Backup comes from another chat, I can't return another chat to chat *{}*",
 	"Backup berasal chat lain, Saya tidak bisa mengembalikan chat lain kedalam chat ini": "Backup comes from another chat, I can't return another chat to this chat",
@@ -210,11 +207,11 @@ Examples of time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 week.
 							   "if it still does not work, report it to the bot maker for "
 							   "make me better! Thanks! 🙂",
 	"Kesalahan terjadi saat memulihkan data Anda. Prosesnya mungkin tidak lengkap. Jika "
-						   "Anda mengalami masalah dengan ini, pesan @AyraHikari dengan file cadangan Anda, jadi "
+						   "Anda mengalami masalah dengan ini, pesan [my master](tg://user?id=798271566) dengan file cadangan Anda, jadi "
 						   "masalah bisa di-debug. Pemilik saya akan dengan senang hati membantu, dan setiap bug "
 						   "dilaporkan membuat saya lebih baik! Terima kasih! 🙂": 
 	"An exception occured while restoring your data. The process may not be complete. If "
-						   "you have a problem with this, contact @AyraHikari with your backup file, so "
+						   "you have a problem with this, contact [my master](tg://user?id=798271566) with your backup file, so "
 						   "issue can be debugged. My owner will be happy to help, and every bug "
 						   "reported makes me better! Thanks! 🙂",
 	"Cadangan sepenuhnya dikembalikan pada *{}*. Selamat datang kembali! 😀": "Backup fully imported in *{}*. Welcome back! 😀",
@@ -238,8 +235,8 @@ Examples of time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 week.
 	"*Berhasil mencadangan untuk:*\nNama chat: `{}`\nID chat: `{}`\nPada: `{}`\n\nNote: cadangan ini khusus untuk bot ini, jika di import ke bot lain maka catatan dokumen, video, audio, voice, dan lain-lain akan hilang": "*Successfully backed up for:*\nChat: `{}`\nChat ID: `{}`\nAt: `{}`\n\nNote: This backup is specific to this bot, if it is imported to another bot then document, video, audio, voice, and other notes will be lost",
 	"backups_help": """
 *Admin only:*
- - /import: reply to a group butler/marie/rose/emilia backup file to import as much as possible, making the transfer super simple!
-Note that files/photos from other bots can't be imported due to telegram restrictions. Except for Emilia backup it self.
+ - /import: reply to a group butler/marie/rose/LynX backup file to import as much as possible, making the transfer super simple!
+Note that files/photos from other bots can't be imported due to telegram restrictions. Except for LynX backup itself.
  - /export: export group data, you can do this 12 hours once.
 """,
 	"*Data yang tidak dapat di import*": "*Data which can't be imported*",
@@ -298,7 +295,7 @@ Note that files/photos from other bots can't be imported due to telegram restric
 	"di blokir": "banned sender",
 	"di blokir sementara selama {}": "temporarily ban for {}",
 	"di bisukan sementara selama {}": "temporarily mute for {}",
-	"""Sepertinya Anda mencoba menetapkan nilai sementara untuk blacklist, tetapi belum menentukan waktu; gunakan `/blacklistmode tban <timevalue>`.
+	"""It looks like you're trying to set a temporary value for the blacklist, but haven't set a time yet; Use `/blacklistmode tban <timevalue>`.
 
 Contoh nilai waktu: 4m = 4 menit, 3h = 3 jam, 6d = 6 hari, 5w = 5 minggu.""": """It looks like you are trying to set a temporary value to blacklist, but has not determined the time; use `/blacklistmode tban <timevalue>`.
 
@@ -556,7 +553,7 @@ Organize your group via PM easily.
 
 *Admin only:*
  - /filter <keyword> <reply message>: add a filter to this chat. The bot will now reply that message whenever 'keyword' is mentioned. If you reply to a sticker with a keyword, the bot will reply with that sticker. 
-NOTE: all filter keywords are in lowercase. If you want your keyword to be a sentence, use quotes. eg: /filter "hey there" How you doin?
+NOTE: all filter keywords are in lowercase. If you want your keyword to be a sentence, use quotes. eg: /filter "hey there" How you doing?
  - /stop <filter keyword>: stop that filter.
 """,
 
