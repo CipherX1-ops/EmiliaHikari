@@ -19,9 +19,9 @@ en = {
 	"Bahasa telah di ubah ke {}!": "Language changed to {}!",
 	"Bahasa di *{}* saat ini adalah:\n{}.\n\nPilih bahasa:": "Current language in *{}* is:\n{}.\n\nSelect language:",
 	"obrolan saat ini": "current in this chat",
-	"language_help": """Not every group speaks indonesian; some groups would rather have LynX respond in their own language.
+	"language_help": """Not every group speaks indonesian; some groups would rather have ⳐⲩⲛⲬ respond in their own language.
 
-This is where translations come in; you can change most of LynX's replies to be in the language of your choice!
+This is where translations come in; you can change most of ⳐⲩⲛⲬ's replies to be in the language of your choice!
 
 Available languages are:
 - 🇮🇩 Indonesia
@@ -41,7 +41,7 @@ You can find the list of available commands with /help.
 If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
 """,
 	"help_text": """
-Hey there! My name is *LynX*.
+Hey there! My name is *ⳐⲩⲛⲬ*.
 I'm a modular group management bot with fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
 
@@ -192,7 +192,7 @@ Examples of time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 week.
 # Backups
 	"Coba unduh dan unggah ulang file seperti Anda sendiri sebelum mengimpor - yang ini sepertinya rusak!": "Try downloading and reuploading the file as yourself before importing - this one seems to be iffy!",
 	"File cadangan tidak valid!": "Invalid backup file!",
-	"Telah terjadi kesalahan dalam import backup LynX!\nGabung ke [Channel support](https://t.me/FutureTechnologyGuard) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from LynX backup!\nJoin our [Channel support](https://t.me/FutureTechnologyGuard) for reporting and troubleshooting this problem!\n\nThank you",
+	"Telah terjadi kesalahan dalam import backup ⳐⲩⲛⲬ!\nGabung ke [Channel support](https://t.me/FutureTechnologyGuard) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from ⳐⲩⲛⲬ backup!\nJoin our [Channel support](https://t.me/FutureTechnologyGuard) for reporting and troubleshooting this problem!\n\nThank you",
 	"Telah terjadi kesalahan dalam import backup Rose!\nGabung ke [Channel support](https://t.me/FutureTechnologyGuard) kami untuk melaporkan dan mengatasi masalah ini!\n\nTerima kasih": "An exception occured while restoring your data from Rose backup!\nJoin our [Channel support](https://t.me/FutureTechnologyGuard) for reporting and troubleshooting this problem!\n\nThank you",
 	"Ada lebih dari satu grup di file ini, dan tidak ada yang memiliki id obrolan yang sama dengan grup ini - bagaimana cara memilih apa yang akan diimpor?": "Theres more than one group here in this file, and none have the same chat id as this group - how do I choose what to import?",
 	"Backup berasal chat lain, Saya tidak bisa mengembalikan chat lain kedalam chat *{}*": "Backup comes from another chat, I can't return another chat to chat *{}*",
@@ -235,8 +235,8 @@ Examples of time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 week.
 	"*Berhasil mencadangan untuk:*\nNama chat: `{}`\nID chat: `{}`\nPada: `{}`\n\nNote: cadangan ini khusus untuk bot ini, jika di import ke bot lain maka catatan dokumen, video, audio, voice, dan lain-lain akan hilang": "*Successfully backed up for:*\nChat: `{}`\nChat ID: `{}`\nAt: `{}`\n\nNote: This backup is specific to this bot, if it is imported to another bot then document, video, audio, voice, and other notes will be lost",
 	"backups_help": """
 *Admin only:*
- - /import: reply to a group butler/marie/rose/LynX backup file to import as much as possible, making the transfer super simple!
-Note that files/photos from other bots can't be imported due to telegram restrictions. Except for LynX backup itself.
+ - /import: reply to a group butler/marie/rose/ⳐⲩⲛⲬ backup file to import as much as possible, making the transfer super simple!
+Note that files/photos from other bots can't be imported due to telegram restrictions. Except for ⳐⲩⲛⲬ backup itself.
  - /export: export group data, you can do this 12 hours once.
 """,
 	"*Data yang tidak dapat di import*": "*Data which can't be imported*",
