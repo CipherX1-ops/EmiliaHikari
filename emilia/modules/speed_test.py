@@ -1,7 +1,7 @@
 from telegram import Update, Bot, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import run_async, CallbackQueryHandler
 
-from emilia import dispatcher, DEV_USERS
+from emilia import dispatcher
 from emilia.modules.disable import DisableAbleCommandHandler
 from emilia.modules.helper_funcs.chat_status import dev_plus
 
