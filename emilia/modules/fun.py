@@ -12,7 +12,6 @@ import asyncio
 import io
 from PIL import Image
 from io import BytesIO
-from zalgo_text import zalgo
 import os
 from pathlib import Path
 import nekos
