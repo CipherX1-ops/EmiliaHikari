@@ -1,4 +1,4 @@
-# D A N K modules by @deletescape vvv
+# D A N K modules by @Hackintush vvv
 # based on
 # https://github.com/wrxck/mattata/blob/master/plugins/copypasta.mattata
 import html
@@ -21,10 +21,10 @@ from telegram import Bot, Update, ParseMode, Message
 from telegram.ext import run_async
 
 import lynda.modules.fun_strings as fun_strings
-from lynda import dispatcher
-from lynda.modules.disable import DisableAbleCommandHandler
-from lynda.modules.helper_funcs.chat_status import is_user_admin
-from lynda.modules.helper_funcs.extraction import extract_user
+from emilia import dispatcher
+from emilia.modules.disable import DisableAbleCommandHandler
+from emilia.modules.helper_funcs.chat_status import is_user_admin
+from emilia.modules.helper_funcs.extraction import extract_user
 
 import nltk
 from deeppyer import deepfry
@@ -431,7 +431,7 @@ def police(_bot: Bot, update: Update):
     message = update.effective_message.reply_text('/police')
     for i in fun_strings.POLICE:
         message.edit_text(i)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
 
 @run_async
@@ -439,7 +439,7 @@ def moon(_bot: Bot, update: Update):
     message = update.effective_message.reply_text('/moon')
     for i in fun_strings.MOON:
         message.edit_text(i)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
 
 @run_async
@@ -447,7 +447,7 @@ def clock(_bot: Bot, update: Update):
     message = update.effective_message.reply_text('/moon')
     for i in fun_strings.CLOCK:
         message.edit_text(i)
-        time.sleep(0.5)
+        time.sleep(0.2)
 
 
 __help__ = """
