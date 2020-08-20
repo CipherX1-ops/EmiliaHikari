@@ -9,7 +9,6 @@ def convert(speed):
     return round(int(speed) / 1048576, 2)
 
 
-@dev_plus
 @run_async
 def speedtestxyz(_bot: Bot, update: Update):
     buttons = [[InlineKeyboardButton("Image",
