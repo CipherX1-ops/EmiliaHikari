@@ -86,7 +86,7 @@ class WelcomeSecurity(BASE):
 	mute_time = Column(UnicodeText, default="0")
 	timeout = Column(UnicodeText, default="0")
 	timeout_mode = Column(Integer, default=1)
-	custom_text = Column(UnicodeText, default="Yes, I'm Human.")
+	custom_text = Column(UnicodeText, default="Klik disini untuk mensuarakan")
 
 	def __init__(self, chat_id, security=False, extra_verify=False, mute_time="0", timeout="0", timeout_mode=1, custom_text="Yes, I'm Human."):
 		self.chat_id = str(chat_id) # ensure string
@@ -218,7 +218,7 @@ def welcome_security(chat_id):
 		if security:
 			return security.security, security.extra_verify, security.mute_time, security.timeout, security.timeout_mode, security.custom_text
 		else:
-			return False, False, "0", "0", 1, "Yes, I'm Human."
+			return False, False, "0", "0", 1, "Klik disini untuk mensuarakan"
 	finally:
 		SESSION.close()
 
