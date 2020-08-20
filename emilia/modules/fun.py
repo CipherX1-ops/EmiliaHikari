@@ -421,7 +421,7 @@ def table(_bot: Bot, update: Update):
 
 @run_async
 def police(_bot: Bot, update: Update):
-    message = update.effective_message.reply_text('/police')
+    send_message(update.effective_message, /police)
     for i in fun_strings.POLICE:
         message.edit_text(i)
         time.sleep(0.2)
