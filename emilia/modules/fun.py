@@ -457,7 +457,7 @@ __help__ = """
  - /pat : pats a user by a reply to the message
  - /hug : hugs a user by a reply to the message
  - /weebify <text>: returns a weebified text
- - /police : *Sirens* Polize iz here
+ - /police : *Sirens* Polize is here
  - /moon : Cycles all the phases of the moon emojis.
  - /clock : Cycles all the phases of the clock emojis.
  - /owo: OWO de text
