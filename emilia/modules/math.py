@@ -3,7 +3,6 @@ from telegram import Update, Bot
 from telegram.ext import run_async
 from emilia import dispatcher
 from emilia.modules.disable import DisableAbleCommandHandler
-import pynewtonmath as newton
 import math
 
 
