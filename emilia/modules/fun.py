@@ -14,12 +14,11 @@ from PIL import Image
 from io import BytesIO
 import os
 from pathlib import Path
-import nekos
 
 from telegram import Bot, Update, ParseMode, Message
 from telegram.ext import run_async
 
-import lynda.modules.fun_strings as fun_strings
+import emilia.modules.fun_strings as fun_strings
 from emilia import dispatcher
 from emilia.modules.disable import DisableAbleCommandHandler
 from emilia.modules.helper_funcs.chat_status import is_user_admin
