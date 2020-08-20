@@ -24,9 +24,6 @@ from emilia.modules.disable import DisableAbleCommandHandler
 from emilia.modules.helper_funcs.chat_status import is_user_admin
 from emilia.modules.helper_funcs.extraction import extract_user
 
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-
 WIDE_MAP = {i: i + 0xFEE0 for i in range(0x21, 0x7F)}
 WIDE_MAP[0x20] = 0x3000
 
