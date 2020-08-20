@@ -421,7 +421,7 @@ def table(_bot: Bot, update: Update):
 
 @run_async
 def police(_bot: Bot, update: Update):
-    send_message(update.effective_message, "/police")
+    message = update.effective_message.reply_text('/police')
     for i in fun_strings.POLICE:
         message.edit_text(i)
         time.sleep(0.2)
@@ -437,7 +437,7 @@ def moon(_bot: Bot, update: Update):
 
 @run_async
 def clock(_bot: Bot, update: Update):
-    message = update.effective_message.reply_text('/moon')
+    message = update.effective_message.reply_text('/clock')
     for i in fun_strings.CLOCK:
         message.edit_text(i)
         time.sleep(0.2)
