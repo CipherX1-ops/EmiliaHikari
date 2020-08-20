@@ -1,4 +1,3 @@
-import speedtest
 from telegram import Update, Bot, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import run_async, CallbackQueryHandler
 
