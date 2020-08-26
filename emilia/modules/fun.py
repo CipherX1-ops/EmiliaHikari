@@ -12,6 +12,7 @@ import asyncio
 import io
 from PIL import Image
 from io import BytesIO
+from zalgo_text import zalgo
 import os
 from pathlib import Path
 
@@ -23,6 +24,12 @@ from emilia import dispatcher
 from emilia.modules.disable import DisableAbleCommandHandler
 from emilia.modules.helper_funcs.chat_status import is_user_admin
 from emilia.modules.helper_funcs.extraction import extract_user
+
+import nltk
+from deeppyer import deepfry
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
 
 WIDE_MAP = {i: i + 0xFEE0 for i in range(0x21, 0x7F)}
 WIDE_MAP[0x20] = 0x3000
