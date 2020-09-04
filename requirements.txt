@@ -20,4 +20,3 @@ nltk
 matplotlib
 opencv-python
 ffmpeg
-libxext6
