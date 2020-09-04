@@ -17,4 +17,4 @@ zalgo_text
 pathlib
 deeppyer
 nltk
-opencv-contrib-python
+libgl1-mesa-glx
