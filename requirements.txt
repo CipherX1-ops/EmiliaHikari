@@ -17,3 +17,4 @@ zalgo_text
 pathlib
 deeppyer
 nltk
+opencv-contrib-python
