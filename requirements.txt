@@ -12,5 +12,4 @@ kbbi
 Pillow
 alphabet_detector
 urbandict
-math
 pynewtonmath
