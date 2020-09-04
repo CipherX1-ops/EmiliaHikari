@@ -20,3 +20,4 @@ nltk
 matplotlib
 opencv-python
 ffmpeg
+cv2
