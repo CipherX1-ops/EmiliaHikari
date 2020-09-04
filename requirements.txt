@@ -17,4 +17,4 @@ zalgo_text
 pathlib
 deeppyer
 nltk
-libgl1-mesa-glx
+matplotlib
