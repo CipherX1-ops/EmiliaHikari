@@ -15,4 +15,5 @@ urbandict
 pynewtonmath
 zalgo_text
 pathlib
+deeppyer
 nltk
