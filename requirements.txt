@@ -12,9 +12,5 @@ kbbi
 Pillow
 alphabet_detector
 urbandict
-pynewtonmath
-zalgo_text
-pathlib
-deeppyer
 
 
